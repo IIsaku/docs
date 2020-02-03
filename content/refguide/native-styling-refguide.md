@@ -501,7 +501,7 @@ The default class to style the navigation is named  `navigationStyle`. There is 
 
 ## 10 Add-On Widgets
 
-Add-on widgets are distributed through the [Native Mobile Resources](https://appstore.home.mendix.com/link/app/109513/) module, and are not shipped with Mendix Studio Pro. Other add-on widgets might also be distributed through starter apps, as well as modules importing pages from other projects. 
+Add-on widgets are distributed through the [Native Mobile Resources](https://appstore.home.mendix.com/link/app/109513/) module, and are not shipped with Mendix Studio Pro. Other add-on widgets might also be distributed through app templates, as well as modules importing pages from other projects. 
 
 ### 10.1 Activity Indicator {#activity-indicator}
 
@@ -743,7 +743,23 @@ The widget’s style properties are as follows:
 
 The default class to style all range slider inputs is named `com_mendix_widget_native_rangeslider_RangeSlider`.
 
-### 10.13 Slider
+### 10.13 Safe Area View
+
+The safe area view widget prevents content from being rendered in unwanted areas, such as behind rounded screen corners or notches. This widget is only supported on iOS apps. Note that `container` styling will only be applied to the safe area.
+
+The widget’s style properties are as follows:
+
+```xml
+<container>content</container>
+```
+
+| Element | Style Properties    | Description |
+| --- | --- | --- |
+| `container` | This has all ViewStyle properties. |        |
+
+The default class to style all safe area views is named `com_mendix_widget_native_safeareaview_SafeAreaView`.
+
+### 10.14 Slider
 
 The slider widget simply allows you to change a number value using a slider. This is how a slider widget could look in an app:
 
@@ -753,7 +769,7 @@ This widget supports the same style properties as the [range slider] (#range-sli
 
 The default class to style all slider inputs is named `com_mendix_widget_native_slider_Slider`.
 
-### 10.14 Ratings
+### 10.15 Ratings
 
 The ratings widget allows users to rate an object from 0 to 5. This is how a ratings widget could look in an app:
 
@@ -782,7 +798,7 @@ The widget’s style properties are as follows:
 
 The default class to style all rating inputs is named `com_mendix_widget_native_rating_Rating`.
 
-### 10.15 Toggle Buttons
+### 10.16 Toggle Buttons
 
 The toggle buttons widget allows you to set an enumeration attribute. This is how a toggle buttons widget could look in an app:
 
@@ -818,7 +834,7 @@ The widget’s style properties are as follows:
 
 The default class to style all toggle buttons is named `com_mendix_widget_native_togglebuttons_ToggleButtons`.
 
-### 10.16 Video Player
+### 10.17 Video Player
 
 The video player widget allows you to play video based on a URL, and is limited to MP4 only. This is how a video player widget could look in an app:
 
@@ -835,7 +851,7 @@ The widget’s style properties are as follows:
 
 The default class to style all video players is named `com_mendix_widget_native_videoplayer_VideoPlayer`.
 
-### 10.17 Web View
+### 10.18 Web View
 
 The web view widget allows you to embed static or dynamic websites in your app. The widget’s style properties are as follows:
 
@@ -851,4 +867,4 @@ The default class to style all web views is named `com_mendix_widget_native_webv
 
 * [Style Your Mendix Native App](/howto/mobile/how-to-use-native-styling)
 * [Implement Native Styling](/howto/mobile/native-styling)
-
+* [Design Properties Documentation](/apidocs-mxsdk/apidocs/design-properties)

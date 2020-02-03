@@ -19,7 +19,7 @@ Sub-items of menu items are not displayed by this widgets, that means the menu s
 
 An example of a simple menu bar properties is represented in the image below:
 
-{{% image_container width="350" %}}![Simple Menu Bar Properties](attachments/menu-widgets/simple-menu-bar-properties.png)
+{{% image_container width="300" %}}![Simple Menu Bar Properties](attachments/menu-widgets/simple-menu-bar-properties.png)
 {{% /image_container %}}
 
 Menu bar properties consist of the following sections:
@@ -70,4 +70,4 @@ This property determines how the simple menu bar is laid out.
 
 * [Page](page)
 * [Menu Widgets](menu-widgets)
-* [Properties Common for Widgets](common-widget-properties)
+* [Properties Common in the Page Editor](common-widget-properties)

@@ -18,7 +18,7 @@ If you start typing in any empty container, Studio Pro will automatically genera
 
 An example of text properties is represented in the image below:
 
-{{% image_container width="350" %}}![Text Properties](attachments/common-widgets/text-properties.png)
+{{% image_container width="300" %}}![Text Properties](attachments/common-widgets/text-properties.png)
 {{% /image_container %}}
 
 Text properties consist of the following sections:
@@ -110,4 +110,4 @@ The render mode determines how the text will be displayed.
 
 * [Page](page)
 * [Common Widgets](common-widgets)
-* [Properties Common for Widgets](common-widget-properties)
+* [Properties Common in the Page Editor](common-widget-properties)

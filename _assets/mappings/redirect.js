@@ -33,6 +33,13 @@ module.exports = {
     {
       from: "/refguide/siemens/mindsphere-module-details",
       to: "/partners/siemens/mindsphere-module-details"
+    },
+	/****************************************************
+     * From https://www.npmjs.com/package/mendixmodelsdk (potentially temporary until fixed)
+     ****************************************************/
+	{
+      from: "/MXSDK/Your+learning+path+for+the+Mendix+SDK",
+      to: "/apidocs-mxsdk/mxsdk/"
     },	
 	/****************************************************
      * PERMANENT REDIRECTS
@@ -673,6 +680,10 @@ module.exports = {
     {
       from: "/refguide8/starting-microflows",
         to: "/refguide/on-click-event"
+      },
+	  {
+      from: "/refguide8/app-settings-dialog",
+        to: "/refguide/new-project"
       },
   
     /****************************************************

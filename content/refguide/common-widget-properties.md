@@ -1,5 +1,5 @@
 ---
-title: "Properties Common for Widgets"
+title: "Properties Common in the Page Editor"
 parent: "pages"
 menu_order: 120
 tags: ["studio pro", "widget properties", "properties", "common", "widget"]
@@ -8,7 +8,7 @@ tags: ["studio pro", "widget properties", "properties", "common", "widget"]
 
 ## 1 Introduction
 
-These are properties that are shared by many widgets. For a complete list of properties, take a look at the relevant widget.
+These are properties that are shared by many elements in the page editor, such as a page or widgets. For a complete list of properties, take a look at the relevant element.
 
 ## 2 Common Section {#common-properties}
 
@@ -317,8 +317,6 @@ By default, whether or not an element is displayed in the browser is determined 
 {{% alert type="info" %}}
 You can choose both **Context** conditions and **Module roles** conditions to apply to the widget.
 {{% /alert %}}
-
-{{% todo %}}[Investigate the difference between DEFAULT and ALWAYS - If a widget is inside an invisible widget, you cannot make it display by choosing ALWAYS?]{{% /todo %}}
 
 Note that with the **Visible** property, you only hide data and do not protect it. You can hide a tab or a table row from an end-user, but if they still have access to the data then they could see it some other way. To restrict access to sensitive data, use a constraint on the domain model, not on individual pages. 
 

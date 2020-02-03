@@ -20,7 +20,7 @@ This how-to will teach you to build local notifications for native applications.
 Before starting this how-to, make sure you have completed the following prerequisites:
 
 * Review the [basic differences](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) between local notifications and push notifications
-* Install the [Make it Native](/refguide/getting-the-make-it-native-app) app on your mobile device
+* Install the [Make It Native](/refguide/getting-the-make-it-native-app) app on your mobile device
 
 ## 3 Creating a Project and Configuring Notifications
 
@@ -32,10 +32,7 @@ Follow the instructions below to set up your first local notification:
 
 	![native mobile quickstart app](attachments/native-push/quickstart.png)
 
-4.  Click **Use this starting point**:
-
-	![use this starting point](attachments/native-push/starting-point.png)
-
+4.  Click **Use this starting point**.
 5.  Click **Create App** to close the dialog box:
 
 	{{% image_container width="500" %}}![app settings](attachments/native-push/app-settings.png){{% /image_container %}}
@@ -111,7 +108,7 @@ Now you will set up the final logic necessary for your app to display a notifica
 11. Click **Expression wizard**
 12. Select **Value** > **Variable** > **Permission (Boolean)** from the drop-down menu. When finished, your **Decision** should look like this:
 
-	{{% image_container width="400" %}}![app settings](attachments/native-push/decision-1-config.png){{% /image_container %}}
+	{{% image_container width="400" %}}![app settings](attachments/native-push/decision-1-config-new.png){{% /image_container %}}
 
 13. Navigate back to your nanoflow.
 

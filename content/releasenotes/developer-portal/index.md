@@ -2,16 +2,44 @@
 title: "Developer Portal"
 description: "Release notes for all project management parts of the Mendix Developer Portal"
 tags: ["developer portal", "buzz", "mendix profile"]
-#When updating, remember to update the Latest Mendix Releases file
+#This document is mapped to the landing page, update the link there if renaming or moving the doc file.
 ---
 
-These release notes cover changes to the app project management functionality and other features of the Mendix Developer Portal. For more information, see the [Developer Portal Guide](/developerportal/index).
+These release notes cover changes to the app project management functionality and other features of the [Mendix Developer Portal](/developerportal/index).
 
 {{% alert type="info" %}}
 For release notes on Mendix Cloud and deployment options, see [Deployment](deployment).
 {{% /alert %}}
 
 ## 2019
+
+### December 23rd, 2019
+
+#### Improvements
+
+* We made minor improvements to the process of creating a new app.
+
+#### Fixes
+
+* We fixed an issue where you were redirected to the **Comments** page from the **Stories** page.
+
+### December 18th, 2019
+
+#### Improvements
+
+* We made some minor improvements to the style of the [Stories](/developerportal/collaborate/stories#beta) beta version. This release fixes issues regarding batch actions.
+
+### December 13th, 2019 
+
+#### Improvements
+
+* We redesigned the [Stories](/developerportal/collaborate/stories#beta) page with a brand new UI and improved stability. The new UI can be accessed by clicking **Enable new UI**. This is a [beta version](/releasenotes/beta-features/).
+
+### December 5th, 2019
+
+#### Improvements
+
+* We made some minor styling improvements on [Buzz](/developerportal/collaborate/buzz).
 
 ### November 21st, 2019
 

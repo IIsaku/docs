@@ -38,12 +38,14 @@ This defines a property's type. A `type` must be one of the following:
 * Component Properties
 	* [icon](#icon)
 	* [image](#image)
+	* [widgets](#widgets)
 * Dynamic Properties
 	* [expression](#expression)
 	* [textTemplate](#texttemplate)
 	* [action](#action)
 	* [attribute](#attribute)
 	* [object](#object)
+	* [file](#file)
 
 ### 1.2 XML Elements
 
@@ -299,14 +301,18 @@ The widgets property allows a user to place multiple widgets inside a pluggable 
 This property type was introduced in Mendix 8.3.
 {{% /alert %}}
 
-#### 3.1.1 XML Attributes
+{{% alert type="warning" %}}
+Some widgets are not yet supported inside pluggable widgets. Placing unsupported widgets inside a pluggable widget results in a consistency error in Studio and Studio Pro.
+{{% /alert %}}
+
+#### 3.3.1 XML Attributes
 
 | Attribute  | Required | Attribute Type | Description                                                                                                                                                          |
 | ---------- | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `type`     | Yes      | String         | Must be `widgets`                                                                                                                                                       |
 | `key`      | Yes      | String         | See [key](#key) |
 | `required` | No       | Boolean        | Whether a user must provide at least one widget. `true` by default                                                                                                |
-#### 3.1.2 Studio Pro UI
+#### 3.3.2 Studio Pro UI
 
 When the component is defined as follows:
 
@@ -364,11 +370,11 @@ Then the Studio Pro UI for the property appears like this:
 
 ![](attachments/widget-property-types/expression.png)
 
-### 4.4 TextTemplate{#texttemplate}
+### 4.2 TextTemplate{#texttemplate}
 
 `TextTemplate` allows a user to configure translatable text template similar to the [Caption](/refguide/text#caption) of a text widget. The interpolated string will be passed to the client component as `DynamicValue<string>`.
 
-#### 4.4.1 XML Attributes
+#### 4.2.1 XML Attributes
 
 | Attribute   | Required | Attribute Type | Description                                                                                                                                                          |
 | ----------- | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -378,11 +384,11 @@ Then the Studio Pro UI for the property appears like this:
 | `required`  | No       | Boolean        | Whether the property must be specified by the user, `true` by default                                                                                                |
 
 
-#### 4.4.2 XML Elements
+#### 4.2.2 XML Elements
 
 `<translations>` — Allows to set a default value for text templates for different languages using `<translation>` elements with a `lang` attribute representing [ISO 639](https://en.wikipedia.org/wiki/ISO_639) code of the language. Available languages are listed in the [Languages Tab](/refguide/project-settings#4-languages-tab) in Studio Pro.
 
-#### 4.4.3 Studio Pro UI
+#### 4.2.3 Studio Pro UI
 
 When the property is defined as follows:
 
@@ -402,18 +408,18 @@ Then the Studio Pro UI for the property appears like this:
 
 ![](attachments/widget-property-types/text.png)
 
-### 4.5 Action{#action}
+### 4.3 Action{#action}
 
 The action property allows a user to configure an action to do things like calling nanoflows, saving changes, and opening pages. The client component will receive `ActionValue` representing it, or `undefined` when the **Do nothing** action was selected.
 
-#### 4.5.1 XML Attributes
+#### 4.3.1 XML Attributes
 
 | Attribute  | Required | Attribute Type | Description                                                                                                                                                          |
 | ---------- | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `type`     | Yes      | String         | Must be `action`                                                                                                                                                     |
 | `key`      | Yes      | String         | See [key](#key) |
 
-#### 4.5.2 Studio Pro UI
+#### 4.3.2 Studio Pro UI
 
 When the property is defined as follows:
 
@@ -428,11 +434,11 @@ Then the Studio Pro UI for the property appears like this:
 
 ![](attachments/widget-property-types/action.png)
 
-### 4.6 Attribute{#attribute}
+### 4.4 Attribute{#attribute}
 
 The attribute property allows a widget to work directly with entities' attributes, both reading and writing attributes. Depending on the widget's purposes, a widget should define attribute types it supports. The client component will receive `EditableValue<T>` where `T` depends on a `<attributeType>` configured.
 
-#### 4.6.1 XML 
+#### 4.4.1 XML 
 
 | Attribute  | Required | Attribute Type | Description                                                  |
 | ---------- | -------- | -------------- | ------------------------------------------------------------ |
@@ -441,7 +447,7 @@ The attribute property allows a widget to work directly with entities' attribute
 | `onChange` | No       | Property Path  | The path to an Action property that will be executed by Mendix platform when value is changed by the widget |
 | `required` | No       | Boolean        | This decides if the property must be specified by the user, `true` by default |
 
-#### 4.6.2 XML Elements
+#### 4.4.2 XML Elements
 
 `<attributeTypes>` (required) — This element encapsulates `<attributeType>` elements which declare supported attribute types available while configuring the attribute property in the Studios.
 
@@ -460,7 +466,7 @@ The attribute property allows a widget to work directly with entities' attribute
 | `String`                  | `EditableValue<string>`                       |
 | `Decimal`                 | `EditableValue<BigJS>`                        |
 
-#### 4.6.3 Studio Pro UI
+#### 4.4.3 Studio Pro UI
 
 When the property is defined as follows:
 
@@ -484,11 +490,11 @@ Then the Studio Pro UI for the property appears like this:
 
 ![](attachments/widget-property-types/xml-element.png)
 
-### 4.7 Object{#object}
+### 4.5 Object{#object}
 
 The object property allows to create an arbitrary list of properties.
 
-#### 4.7.1 XML Attributes
+#### 4.5.1 XML Attributes
 
 | Attribute | Required | Attribute Type | Description                                                                                                                                                          |
 | ---------- | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -497,11 +503,11 @@ The object property allows to create an arbitrary list of properties.
 | `isList`   | Yes      | Boolean        | Must be `true`                                                                                                                                                       |
 | `required` | No       | Boolean        | This decides if the is user is required to specified items in the list, `true` by default |
 
-#### 4.7.2 XML Elements
+#### 4.5.2 XML Elements
 
 `<properties>` (required) — This encapsulates the list or properties to be configured. For more information on property groups, see the [Property Groups](pluggable-widgets#property-groups) section of *Pluggable Widgets API*. Properties must be grouped by `<propertyGroup>` elements. Nested object properties are not supported.
 
-#### 4.7.3 Studio Pro UI
+#### 4.5.3 Studio Pro UI
 
 When the property is defined as follows:
 
@@ -527,6 +533,33 @@ When the property is defined as follows:
 Then the Studio Pro UI for the property appears like this:
 
 ![](attachments/widget-property-types/object.png)
+
+### 4.6 File {#file}
+
+The file property allows a user to configure a file from an object that is a specialization of **System.File**. It is passed as a [`DynamicValue<FileValue>`](/apidocs-mxsdk/apidocs/client-apis-for-pluggable-widgets#filevalue) prop to a client component.
+
+#### 4.6.1 XML Attributes
+
+| Attribute  | Required | Attribute Type | Description |
+| ---------- | -------- | -------------- | ----------- |
+| `type`     | Yes      | String         | Must be `file` |
+| `key`      | Yes      | String         | See [key](#key)  |
+
+#### 4.6.3 Studio Pro UI
+
+When the property is defined as follows:
+
+```xml
+<property key="file" type="file" required="false">
+	<caption>File</caption>
+	<category>General</category>
+	<description>Sample text file</description>
+</property>
+```
+
+Then the Studio Pro UI for the property appears like this:
+
+![](attachments/widget-property-types/file.png)
 
 ## 5 System Properties {#system-properties}
 

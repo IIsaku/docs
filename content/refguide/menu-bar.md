@@ -19,7 +19,7 @@ Menu bars can go two levels deep, that means menu items can have sub-items. For 
 
 An example of menu bar properties is represented in the image below:
 
-{{% image_container width="350" %}}![](attachments/menu-widgets/menu-bar-properties.png)
+{{% image_container width="300" %}}![](attachments/menu-widgets/menu-bar-properties.png)
 {{% /image_container %}}
 
 Menu bar properties consist of the following sections:
@@ -61,4 +61,4 @@ Only available when the [menu source](#menu-source) is set to **Menu document**.
 
 * [Page](page)
 * [Menu Widgets](menu-widgets)
-* [Properties Common for Widgets](common-widget-properties)
+* [Properties Common in the Page Editor](common-widget-properties)

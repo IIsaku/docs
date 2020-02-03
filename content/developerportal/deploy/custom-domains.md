@@ -14,6 +14,8 @@ The Mendix Cloud supports adding custom domains such as `https://myapp.mycompany
 
 {{% alert type="info" %}}
 This option is provided for licensed apps. You cannot add custom domains to Free Apps.
+
+This documentation is describing certificates for *incoming* connections. For information on setting up certificates for *outgoing* connections, see [Certificates](certificates).
 {{% /alert %}}
 
 {{% alert type="warning" %}}
@@ -62,7 +64,7 @@ Custom domain certificates (or just "certificates") are managed at the *applicat
 
 You can have more than one certificate for an application. For example when your certificate expires, you can upload a new certificate next to your old certificate.
 
-You can be choose which certificate to use when you configure a custom domain for an environment (test, acceptance, or production).
+You can choose which certificate to use when you configure a custom domain for an environment (test, acceptance, or production).
 
 ![](attachments/custom-domains/21168233.png)
 
