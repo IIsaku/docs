@@ -1,9 +1,9 @@
 ---
 title: "Native Mobile Resources"
 category: "Modules"
-description: " "
-tags: [ ]
-draft: true
+description: "Describes the configuration and usage of the Native Mobile Resources module, which is available in the Mendix App Store."
+tags: ["app store", "app store component", "native mobile resources", "native widget", "platform support"]
+#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## 1 Introduction
@@ -21,13 +21,14 @@ These are the native widgets included in these resources along with links to the
 | [Badge](https://github.com/mendix/widgets-resources/blob/master/packages-native/badge) | Displays text or a value as a badge. |
 | [Barcode Scanner](https://github.com/mendix/widgets-resources/blob/master/packages-native/barcode-scanner) | Scans barcode and QR code values. |
 | [Color Picker](https://github.com/mendix/widgets-resources/blob/master/packages-native/color-picker) | Allows the app end-user to select colors. |
+| [Carousel](https://github.com/mendix/widgets-resources/tree/master/packages-native/carousel) | Creates a carousel that can be swiped with free modeling. |
 | [Feedback](https://github.com/mendix/widgets-resources/blob/master/packages-native/feedback) | Allows the app end-user to submit feedback directly into the app project. |
 | [Floating Action Button](https://github.com/mendix/widgets-resources/blob/master/packages-native/floating-action-button) | Displays a circular floating icon button. |
 | [Maps](https://github.com/mendix/widgets-resources/blob/master/packages-native/maps) | Shows locations on an interactive map. |
 | [Notifications](https://github.com/mendix/widgets-resources/blob/master/packages-native/notifications) | Triggers actions based on incoming notifications. |
 | [Progress Bar](https://github.com/mendix/widgets-resources/blob/master/packages-native/progress-bar) | Displays progress in a horizontal bar. |
 | [Progress Circle](https://github.com/mendix/widgets-resources/blob/master/packages-native/progress-circle) | Displays progress in a circle with enclosed text. |
-| [QR Code](https://github.com/mendix/widgets-resources/blob/master/packages-native/qr-code) |      |
+| [QR Code](https://github.com/mendix/widgets-resources/blob/master/packages-native/qr-code) | Displays a QR code based on a value. |
 | [Range slider](https://github.com/mendix/widgets-resources/blob/master/packages-native/range-slider) | Changes a range of values using a slider. |
 | [Rating](https://github.com/mendix/widgets-resources/blob/master/packages-native/rating) | Gives a rating by selecting stars. |
 | [Slider](https://github.com/mendix/widgets-resources/blob/master/packages-native/slider) | Changes a numeric value using a slider. |

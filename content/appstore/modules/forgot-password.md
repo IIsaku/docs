@@ -1,23 +1,23 @@
 ---
 title: "Forgot Password"
 category: "Modules"
-description: " "
-tags: [ ]
-draft: true
+description: "Describes the configuration and usage of the Forgot Password module, which is available in the Mendix App Store."
+tags: ["app store", "app store component", "forgot password", "password", "login", "credentials", "platform support"]
+#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## 1 Introduction
 
-The [Forgot Password](https://appstore.home.mendix.com/link/app/1296/) module works in conjunction with other modules and widgets to implement forgot-my-password functions. 
+The [Forgot Password](/appstore/modules/forgot-password) module works in conjunction with other modules and widgets to implement forgot-my-password functions. 
 
 With this module, the end-user can enter their email address, and an email will be sent with a confirmation link. The end-user then opens the link and gets the option to reset their password. 
 
 ### 1.1 Dependencies {#dependencies}
 
-* [Email with Templates](email-with-templates) module
-* [Deep Link](deep-link) module
-* [Encryption](encryption) module
-* [Model Reflection](model-reflection) module
+* [Email with Templates](email-with-templates)
+* [Deep Link](deep-link)
+* [Encryption](encryption)
+* [Model Reflection](model-reflection)
 
 ## 2 Configuration
 
