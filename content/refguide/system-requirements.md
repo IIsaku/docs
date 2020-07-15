@@ -19,14 +19,26 @@ The following frameworks are automatically installed (if necessary):
 
 * Microsoft .NET Framework 4.7.2
 * Microsoft Visual C++ 2010 SP1 Redistributable Package
-* Microsoft Visual C++ 2013 Redistributable Package
+* Microsoft Visual C++ 2015 Redistributable Package
 * AdoptOpenJDK 11 or Oracle JDK 11 (the former is installed automatically as of [Mendix 8.0.0](/releasenotes/studio-pro/8.0#800) if you do not have any JDK 11 installed) 
 
 {{% alert type="info" %}}
 You can choose which JDK is used for building and running locally via the **Edit** > **Preferences** menu item in Studio Pro.
 {{% /alert %}}
 
-### 2.1 TortoiseSVN
+{{% alert type="warning" %}}
+Please note the limitation that the database viewer built into Studio Pro (as described in [How to Share the Development Database](/howto/collaboration-requirements-management/sharing-the-development-database)) does not work with JDK 11.06 or 11.07.
+{{% /alert %}}
+
+### 2.1 Firewall Settings
+
+Studio Pro needs access to the following URLs in order to work. If your firewall is currently blocking these, you will need to whitelist them.
+
+* `*.mendix.com`
+* `*.mendixcloud.com`
+* `*.teamserver.sprintr.com`
+
+### 2.2 TortoiseSVN
 
 If you want to use TortoiseSVN in combination with Studio Pro, download the latest version from the [TortoiseSVN](https://tortoisesvn.net/) website.
 

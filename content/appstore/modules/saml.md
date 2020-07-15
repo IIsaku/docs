@@ -12,7 +12,7 @@ The [SAML](https://appstore.home.mendix.com/link/app/1174/) module can be used a
 
 By configuring the information about all identity providers in this module, you will allow the users to sign in using the correct identity provider (IdP). There is no limit on the number of different identity providers you can configure.
 
-### 1.1 Typical Usage Scenarios
+### 1.1 Typical Use Cases
 
 With this module, you can authenticate against your Microsoft Active Directory server in a secure manner. The SAML protocol allows for the encryption of all the information transferred between the two servers, so VPN connections, LDAP, or Kerberos authentication are no longer needed.
 
@@ -31,9 +31,9 @@ With this module, you can authenticate against your Microsoft Active Directory s
 
 ## 2 Installation
 
-1. Configure the **Startup** microflow to run as the startup microflow. This microflow will initialize the custom request handler `/SSO/`, validate all IdP configurations, and prepare any the configuration entities required during the configuration.
+1. Configure the **Startup** microflow to run as the startup microflow. This microflow will initialize the custom request handler `/SSO/` (please note the importance of using the final `/` for all instances of `/SSO/`), validate all IdP configurations, and prepare the configuration entities required during the configuration.
 2. Add the **OpenConfiguration** microflow to the navigation, and then allow the administrator to access this page.
-3. Review and configure all the constants:
+3.  Review and configure all the constants:
 	* **DefaultLoginPage** – You can specify another login page here (for example, configuring the *index.html* page to redirect to `/SSO/`). This constant is only used when the login process fails. When the end-user cannot be authenticated in Mendix, they are presented with a page. If this constant is specified, a button will appear, and by clicking this button, you will be redirected to the default login page (for example, *index.html* or *login.html*).
 	* **DefaultLogoutPage** – Removing the sign-out button is recommended, but if you choose to keep it, the end-user will be redirected to a page. You can choose where the end-user is redirected to (for example, back to `/SSO/` or your *login.html* page). Every user signed in via SAML is redirected to this location when they are logged out.
 	* **SSOLandingPage** – You can specify a different landing page here (for example, redirecting each user accessing the application URL to the SAML login). This requires you to change the *index.html* page by adding `<meta http-equiv="refresh" content="0;URL=/SSO/" />` (so the end-user does not end up on *index.html* again after a login attempt).  By changing this constant to `/index3.html`, the end-user will land on *index3.html* instead of *index.html*.  In this case, you will of course need to add an *index3.html* page to your theme (and you can copy the original *index.html* into *index3.html*).
@@ -45,7 +45,7 @@ Before any IdP can be configured, you need to configure the service provider (SP
 
 You can choose what you want to enter for the entity ID, organization, and contact person. There are no limitations here. This should be in line with the policies of the IdP, since all this information is for their reference. 
 
-* **Allow IdP Discovery** – When using multiple IdPs, this determines whether you allow users to get a list of all available IdPs if they have not specified a specific IdP in the login request. When going to `/SSO/`, if you have only one active IdP, the module will use the active IdP by default. If you have multiple IdPs, it is required to include the IdP in the URL. This can be done by using th URL */SSO/login/[IdP Alias]*  or */SSO/login?_idp_id=[IdP_Alias]*.
+* **Allow IdP Discovery** – When using multiple IdPs, this determines whether you allow users to get a list of all available IdPs if they have not specified a specific IdP in the login request. When going to `/SSO/`, if you have only one active IdP, the module will use the active IdP by default. If you have multiple IdPs, it is required to include the IdP in the URL. This can be done by using the URL */SSO/login/[IdP Alias]*  or */SSO/login?_idp_id=[IdP_Alias]*.
 * **Keep Log Files** – All login attempts are tracked in the **SAMLRequest** and **SSOLog** entities. This attribute configures how long those records are kept before removing them. A scheduled event runs daily to remove all the files outside that date range. This value is mandatory. When keeping it 0, all records will be removed daily.
 * **Use Encryption** (key length: **No Encryption**, **1024bit Encryption**, **2048bit Encryption**; encryption method: **SHA1 / SHA256**) – This allows the encryption of any messages being sent from the SP to the IdP. If encryption is chosen, all the messages going out to the IdP will be encrypted, and a self-signed certificate will be generated and stored in the keystore. Changing the encryption requires all IdPs to re-import the new metadata file.
 * **KeyStore** – All the certificates required for encryption are stored in the keystore. Resetting the keystore or uploading another keystore will require all the IdPs to import the new metadata file. If you use a custom keystore, make sure the alias of the keystore is the same as the SP entity ID. In addition, make sure the new keystore password is set in the `KeystorePassword` constant.
@@ -102,7 +102,7 @@ The resource folder contains a file called *SAMLConfig.properties*. In this file
 
 This file contains the documented properties, and example lines show the default values of these options.
 
-With these settings, you can configure the behavior of this module and improve multi-tentant behavior of your application. For plain SAML authentication, it is best to leave this file unchanged. 
+With these settings, you can configure the behavior of this module and improve multi-tenant behavior of your application. For plain SAML authentication, it is best to leave this file unchanged. 
 
 ## 5 Debugging the Configuration
 
@@ -116,12 +116,12 @@ When enabling the log node SSO to show trace messages, you can find detailed inf
 * **"Unable to complete the request"** – A message has been received that does not have a RelayState/RequestID that matches any of the previously generated IDs (or the message has been answered already). If you get this message, you should validate the message communication and confirm that you are not using unsolicited requests. Or, you can enable that check the box to allow for IdP initiated authentication. 
 * **"The authentication was successful, but there is no account available in this application."** – There is no account that matches the identifying assertion, by downloading the SAMLResponse message, you can see the assertion attributes in the XML file to validate which user name has been sent.
 * **"Your account hasn't been configured to access this application."** – There is a user account available in the application that matches the identifying assertion, but the user does not have user roles or the user is not active. 
-* **"An unexpected error occured while creating a session"** – An uncaught exception occurred, which could be a configuration error or situation that has not been supported by the module. More information should be available in the stack trace.
+* **"An unexpected error occurred while creating a session"** – An uncaught exception occurred, which could be a configuration error or situation that has not been supported by the module. More information should be available in the stack trace.
 * **"The response from the identity provider isn't valid."** – The response from the IdP does not contain any assertion attributes.
 * **"No valid SSO Configuration could be found for entity Id: [IdP Alias]"** – Either the specified IdP configuration has not been activated, or an error occurred when reloading the configuration. The error message when reloading the configuration should give more information about the exact problem. The configuration is loaded on startup, when (de-)activating the configuration or when saving an active configuration. 
 * **"Unsupported action: [action], only ....."** – The URL is incorrect. Validate that the URL is correctly structured as *action: login, assertion, metadata, discovery*.
 * **“MSIS7046: The SAML protocol parameter ‘RelayState’ was not found or not valid.”** – This error can be shown on the ADFS server, most likely when you are using Mac OSX and a Safari browser. Setting the `BindingURI_Redirect` constant to true might help resolve the issue. By default, Mendix favors the `Post` binding, as the maximum size exceeds that of a `Redirect` binding due to its use of cookies and post information instead of URL parameters. The size can be a factor when using encryption.
-* **"Unable to validate Response, see SAMLRequest overview for detailed response. Error: An error occured while commiting user: p:'johndoe@company.com'/u:'JoHnDoE@CoMpAnY.CoM'"** – All user names passing through the SAML module are converted to lower-case, so make sure all the existing user names and new user names are also converted to lower-case. This is because certain systems are not case-sensitive (for example, Active Directory), and also because it is a good idea to create two unique users (for example, "JoHnDoE@CoMpAnY.CoM" and "johndoe@company.com").
+* **"Unable to validate Response, see SAMLRequest overview for detailed response. Error: An error occurred while committing user: p:'johndoe@company.com'/u:'JoHnDoE@CoMpAnY.CoM'"** – All user names passing through the SAML module are converted to lower-case, so make sure all the existing user names and new user names are also converted to lower-case. This is because certain systems are not case-sensitive (for example, Active Directory), and also because it is a good idea to create two unique users (for example, "JoHnDoE@CoMpAnY.CoM" and "johndoe@company.com").
 
 ## 6 URLs
 
@@ -138,7 +138,7 @@ The module tries to look up the user that matches the provided user name. When m
 
 It is possible to customize this microflow to determine the correct user. Whichever user instance is returned will be signed in to the application (and passed on to any other microflow).
 
-### 7.2 CustomUserProvioning {#customuserprovisioning}
+### 7.2 CustomUserProvisioning {#customuserprovisioning}
 
 When selecting in the SSO configuration to run the `customUserProvisioning` action (previously known as `CustomLoginLogic`), you can update the new or retrieved user with additional information from the assertion. All the assertions are passed into the microflow, and these can be transformed and stored in the user record. Also, additional roles can be granted to the users based on the assertion attributes.
 
@@ -152,4 +152,7 @@ The resources folder contains the *SAMLConfig.properties* file, and through this
 
 ## 9 Read More
 
-* [SSO Using SAML](https://gettingstarted.mendixcloud.com/link/module/115/lecture/938)
+*  [SSO Using SAML](https://gettingstarted.mendixcloud.com/link/module/115/lecture/938)
+
+	{{% alert type="info" %}}You must be signed in to the Mendix Platform to see the above lecture.
+	{{% /alert %}}

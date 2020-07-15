@@ -14,9 +14,16 @@ Structure widgets are widgets that allow you to provide structure to your page a
 There are the following Structure widgets:
 
 * [Columns and Sidebars](#columns) 
+
 * [Container](#container-overview)
+
 * [Group Box](#group-box-overview)
+
 * [Tab Container](#tab-container)
+
+* [Snippet](#snippet)
+
+    ![](attachments/page-editor-widgets-structure/structure-widgets.jpg)
 
 ## 2 Columns and Sidebars{#columns}
 
@@ -120,7 +127,7 @@ In the **General** section of a row you can select the number of columns in it, 
 
     * You can also set the number of columns in the working area: select one of the columns and click a plus icon on top of it to add a new column to the right
 
-        <img src="attachments/page-editor-widgets-structure/adding-new-column.png" alt="Adding New Column" style="zoom:80%;" />
+        {{% image_container width="300" %}}![Adding New Column](attachments/page-editor-widgets-structure/adding-new-column.png){{% /image_container %}}
 
 * <a name="align-columns"></a>**Align Columns Vertically** – aligns all columns in the row vertically, you can select the following options:
 
@@ -177,7 +184,9 @@ You can choose the following options:
 
 You can also resize columns manually in the working area: drag the column border to change its size. 
 
-<img src="attachments/page-editor-widgets-structure/resizing-column.png" alt="Resizing Column" style="zoom:80%;" />
+{{% image_container width="300" %}}
+![Resizing Column](attachments/page-editor-widgets-structure/resizing-column.png)
+{{% /image_container %}}
 
 The **Width** property can be used to make your layout more flexible and adaptive to different types of devices.
 
@@ -189,7 +198,9 @@ For the *desktop* and *tablet*, you might want to set the first column with a pi
 
 For *phone*, it can be a good idea to place two columns one under another, setting them to **Manual** width of *12*. In this case, the second column will be automatically wrapped to another line:
 
- <img src="attachments/page-editor-widgets-structure/layout-example-phone.png" alt="Layout Example, Phone" style="zoom:80%;" />
+ {{% image_container width="300" %}}
+![Layout Example, Phone](attachments/page-editor-widgets-structure/layout-example-phone.png)
+{{% /image_container %}}
 
 ##### 3.3.2.2 Align Vertically {#align-column}
 
@@ -261,7 +272,34 @@ Each tab has the following properties:
 	{{% image_container width="300" %}}![](attachments/page-editor-widgets-structure/tab-properties.png)
 	{{% /image_container %}}
 
-## 7 Read More
+## 7 Snippet Overview {#snippet}
+
+Snippets define reusable elements of pages and are created in Studio Pro. By using snippets you can make changes in fewer places when you modify pages. 
+
+For example, your team member in Studio Pro has created a snippet and added a customer form to it turning this form into a reusable page element. You can use this snippet on your pages in Studio too:
+
+{{% image_container width="500" %}}![](attachments/page-editor-widgets-structure/snippet-example.jpg)
+{{% /image_container %}}
+
+While you can call (use) snippets on your pages in Studio, you cannot create, change, or delete them. For more information on snippets in Studio Pro, see [Snippet](/refguide/snippet).
+
+{{% alert type="info" %}}
+The **Snippet** widget is not displayed if your app project does not contain any snippets. 
+{{% /alert %}}
+
+To call a snippet and add it to your page, do the following:
+
+1. In the **Toolbox** > **Widgets**, find the **Snippet** widget and drag and drop it on your page. 
+
+2. Open properties and click the **Snippet** property.
+
+3. In the **Select Snippet** dialog box, select a snippet you would like to use on your page and click **Select**. 
+
+    ![](attachments/page-editor-widgets-structure/select-snippet.jpg)
+
+The snippet is added to your page. 
+
+## 8 Read More
 
 * [Pages](page-editor) 
 * [Widgets](page-editor-widgets)

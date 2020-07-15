@@ -19,7 +19,7 @@ This how-to will walk you through the steps needed to implement push notificatio
 
 ## 2 Importing the PushNotifications Module from the App Store
 
-The [Push Notifications Connector module](https://appstore.home.mendix.com/link/app/3003/) is published in the Mendix App Store. To import it into your project, click **App Store** in the top right of Mendix Studio Pro, which will open the App Store in a new tab. Search for "Push Notifications Connector" and click the title of the result:
+The [Push Notifications Connector](/appstore/modules/push-notifications) module is published in the Mendix App Store. To import it into your project, click **App Store** in the top right of Mendix Studio Pro, which will open the App Store in a new tab. Search for "Push Notifications Connector" and click the title of the result:
 
 ![](attachments/19955732/20218020.png)
 
@@ -37,6 +37,8 @@ The PushNotifications module has two dependencies:
 
  * [Encryption](/appstore/modules/encryption)
  * [Community Commons Function Library](/appstore/modules/community-commons-function-library)
+ * [Nanoflow Commons](https://appstore.home.mendix.com/link/app/109515/)
+ * [Native Mobile Resources](https://appstore.home.mendix.com/link/app/109513/)
 
 To include these dependencies, download them from the App Store in a way similar to how you installed the PushNotifications module. While importing, you may get a pop-up window with information about overwriting project files, which you can confirm by clicking **OK**.
 
@@ -73,7 +75,8 @@ If your project already has an AfterStartup microflow configured, it is recommen
 * create a new microflow, from which you will call both the existing AfterStartup microflow and the AfterStartup_PushNotifications microflow, and then set this as the AfterStartup microflow for your app
 * add a new action to the existing AfterStartup microflow to run the AfterStartup_PushNotifications microflow
 
-<iframe width="100%" height="491px" frameborder="0" src="https://modelshare.mendix.com/models/02c590e5-f8bf-4f0e-90d6-3719390ee863/onstartupacsandpushnotifications?embed=true" allowfullscreen=""></iframe>
+![On start push microflow](attachments/19955732/on-app-startup.png)
+
 ## 6 Setting Up the Administration Pages {#setting}
 
 Add the **PushNotifications_Administration** page to the project navigation, so it can be reached after you deploy your app. This page contains three tabs:
@@ -137,4 +140,4 @@ Please note that a free PhoneGap Build account is limited to a single applicatio
 ## 11 Read More
 
 * [Microflows](/refguide/microflows)
-* [Test the Implementation](testing-the-implementation)
+* [Test the Push Notifications Implementation](testing-the-implementation)
